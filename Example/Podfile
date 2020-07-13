@@ -1,13 +1,16 @@
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '8.0'
 
 target 'HHFMDB_Example' do
   pod 'HHFMDB', :path => '../'
+  pod 'FMDB'
 
-  target 'HHFMDB_Tests' do
-    inherit! :search_paths
+#  target 'HHFMDB_Tests' do
+#    inherit! :search_paths
 
     
-  end
+#  end
 end

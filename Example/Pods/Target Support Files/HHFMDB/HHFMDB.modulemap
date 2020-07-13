@@ -1,0 +1,6 @@
+framework module HHFMDB {
+  umbrella header "HHFMDB-umbrella.h"
+
+  export *
+  module * { export * }
+}

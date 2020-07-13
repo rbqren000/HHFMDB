@@ -1,0 +1,26 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HHFMDB (0.1.0):
+    - FMDB
+
+DEPENDENCIES:
+  - FMDB
+  - HHFMDB (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FMDB
+
+EXTERNAL SOURCES:
+  HHFMDB:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HHFMDB: db3c151ce9ce85dd451a224522f23211a2e9c531
+
+PODFILE CHECKSUM: 8bd27a4fa4cf1db4ec9bf38653112bfa064f005d
+
+COCOAPODS: 1.8.4
