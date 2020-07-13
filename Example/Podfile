@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'HHFMDB_Example' do
+  pod 'HHFMDB', :path => '../'
+
+  target 'HHFMDB_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
