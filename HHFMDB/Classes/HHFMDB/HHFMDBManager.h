@@ -17,6 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)NSMutableDictionary *storageTypeDic;
 
+//FMDatabaseQueue不使用事务
+- (void)hh_inDatabase_queue:(void (^)(void))block;
+//FMDatabaseQueue使用事务
+- (void)hh_inTransaction_queue:(void (^)(void))block;
+
+//FMDatabase使用事务
+- (void)hh_useTransaction:(void (^)(void))block;
 @end
 
 NS_ASSUME_NONNULL_END

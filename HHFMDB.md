@@ -277,8 +277,8 @@ query = [query stringByAppendingFormat:@"%@ WHERE articleID = '%@'",[temp string
 既可以使用`FMDatabase`又可以使用`FMDatabaseQueue`来操作数据库。
 项目有可能有几个数据库文件，所以FMDatabase对象不能写死。
 
-
-
+## HHFMDBManager
+增删改查通过block传入。
 
 
 

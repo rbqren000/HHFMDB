@@ -28,27 +28,34 @@
     return self;
 }
 
-#pragma mark useTransaction
-- (void)useTransaction_Queue {
+#pragma mark DatabaseQueue
+- (void)hh_inDatabase_queue:(void (^)(void))block
+{
+    ///不使用事务
+    FMDatabaseQueue *queue;
+    [queue inDatabase:^(FMDatabase * _Nonnull db) {
+        block();
+    }];
+}
+- (void)hh_inTransaction_queue:(void (^)(void))block
+{
     ///使用事务
     FMDatabaseQueue *queue;
     [queue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
-        ///
+        block();
     }];
-    //    ///不使用事务
-    //    [self.queue inDatabase:^(FMDatabase * _Nonnull db) {
-    //        ///
-    //    }];
 }
 
 #pragma mark useTransaction
-- (void)useTransaction {
+- (void)hh_useTransaction:(void (^)(void))block
+{
     FMDatabase *fmdb;
     if ([fmdb beginTransaction]) {
         BOOL isRollBack = NO;
         @try
         {
             //这里面写增删改查操作 for循环 多个操作
+            block();
         }
         @catch (NSException *exception)
         {

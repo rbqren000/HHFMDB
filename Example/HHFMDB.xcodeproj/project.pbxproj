@@ -113,15 +113,15 @@
 		1BE13DE624BCBDA6001F1559 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				1BE13DE724BCBDA6001F1559 /* dataSource.json */,
 				1BE13DE824BCBDA6001F1559 /* CommunityModel.h */,
-				1BE13DE924BCBDA7001F1559 /* PublishMOdel.h */,
 				1BE13DEA24BCBDA7001F1559 /* CommunityModel.m */,
+				1BE13DE724BCBDA6001F1559 /* dataSource.json */,
 				1BE13DEB24BCBDA7001F1559 /* model */,
-				1BE13DF024BCBDA7001F1559 /* w2.png */,
-				1BE13DF124BCBDA7001F1559 /* w3.jpg */,
+				1BE13DE924BCBDA7001F1559 /* PublishMOdel.h */,
 				1BE13DF224BCBDA7001F1559 /* PublishMOdel.m */,
 				1BE13DF324BCBDA7001F1559 /* w1.jpg */,
+				1BE13DF024BCBDA7001F1559 /* w2.png */,
+				1BE13DF124BCBDA7001F1559 /* w3.jpg */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -129,10 +129,10 @@
 		1BE13DEB24BCBDA7001F1559 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				1BE13DEC24BCBDA7001F1559 /* User.m */,
+				1BE13DEF24BCBDA7001F1559 /* Student.h */,
 				1BE13DED24BCBDA7001F1559 /* Student.m */,
 				1BE13DEE24BCBDA7001F1559 /* User.h */,
-				1BE13DEF24BCBDA7001F1559 /* Student.h */,
+				1BE13DEC24BCBDA7001F1559 /* User.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
