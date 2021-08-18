@@ -33,7 +33,7 @@
     return dic;
 }
 
-#pragma mark 模型转Class 获取model的类
+#pragma mark 获取model的类
 + (Class)getModelClass:(id)parameters {
     Class CLS;
     if ([parameters isKindOfClass:[NSString class]]) {

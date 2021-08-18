@@ -74,7 +74,10 @@
 }
 
 #pragma mark 创建表
-- (BOOL)createTableWithTableName:(NSString *)tableName dicOrModel:(id)parameters excludeName:(NSArray * _Nullable)nameArr db:(FMDatabase *)db {
+- (BOOL)createTableWithTableName:(NSString *)tableName
+                      dicOrModel:(id)parameters
+                     excludeName:(NSArray * _Nullable)nameArr
+                              db:(FMDatabase *)db {
     return [self createTableWithTableName:tableName dicOrModel:parameters excludeName:nameArr db:db primaryKeyDic:nil];
 }
 - (BOOL)createTableWithTableName:(NSString *)tableName
@@ -107,6 +110,7 @@
                 continue;
             }
         }
+        //不需要保存的字段
         if (nameArr && [nameArr containsObject:key]) {
             if (keyCount == dic.count) {
                 [sql deleteCharactersInRange:NSMakeRange(sql.length - 1, 1)];
