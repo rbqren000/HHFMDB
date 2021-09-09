@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    self.dataSource = @[@[@"创建表0",@"使用事务插入数据",@"删除数据",@"加快速度",@"不使用事务插入数据"],
+    self.dataSource = @[@[@"创建表0",@"使用事务插入数据",@"删除数据",@"更新数据",@"不使用事务插入数据",@"加快速度"],
                         @[@"创建表1",@"插入数据",@"取出数据"],
                         @[@"创建表2模型中包含模型和数组",@"插入数据",@"取出数据"],
                         @[@"创建表3",@"插入数据",@"取出数据",@"删除数据"]];
@@ -95,7 +95,7 @@
                 break;
             }
             case 3: {
-                [self list:@"AAA",@"BBB",@"CCC",nil];
+                [t updateDatabase:db Table:tableName dataSource:@{@"displayName" : @"aaa"} whereFormat:@"nickname = '李小华'", nil];
                 break;
             }
             case 4: {
@@ -103,6 +103,10 @@
                 [t insertWithTableName:tableName dataSource:self.objects.firstObject db:db];
                 NSDate *d2 = [NSDate date];
                 NSLog(@"不使用事务插入时间：%.8f",[d2 timeIntervalSince1970] - [d1 timeIntervalSince1970]);
+                break;
+            }
+            case 5: {
+                [self list:@"AAA",@"BBB",@"CCC",nil];
                 break;
             }
             default:
@@ -192,7 +196,7 @@
                 break;
             }
             case 2: {
-                NSString *sqlString = [NSString stringWithFormat:@"WHERE hh > %@",@"2"];
+                NSString *sqlString = [NSString stringWithFormat:@"hh > %@",@"2"];
                 NSArray *result = [t selectDatabase:db table:tableName dicOrModel:dicC whereFormat:sqlString];
 
                 for (int i = 0; i<result.count; i++) {

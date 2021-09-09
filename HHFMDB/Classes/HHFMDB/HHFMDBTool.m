@@ -84,7 +84,8 @@
                       dicOrModel:(id)parameters
                      excludeName:(NSArray * _Nullable)nameArr
                               db:(FMDatabase * _Nonnull)db
-                   primaryKeyDic:(NSDictionary * _Nullable)primaryKeyDic {
+                   primaryKeyDic:(NSDictionary * _Nullable)primaryKeyDic
+{
     BOOL result = NO;
     
     NSDictionary *dic = [HHFMDBUtil storageTypeTodictionary:parameters];
@@ -278,7 +279,7 @@
         
 
         if (whereString.length) {
-            [sqlString appendFormat:@" %@",whereString];
+            [sqlString appendFormat:@" WHERE %@",whereString];
         }
         
         result = [db executeUpdate:sqlString withArgumentsInArray:argumentsArr];
@@ -294,7 +295,7 @@
                  dicOrModel:(id)parameters
                 whereFormat:(NSString * _Nullable)format
 {
-    NSMutableString *sql = [[NSMutableString alloc]initWithFormat:@"SELECT * FROM %@ %@",tableName, format ? format : @""];
+    NSMutableString *sql = [[NSMutableString alloc]initWithFormat:@"SELECT * FROM %@ %@",tableName, format ? [@" WHERE " stringByAppendingString:format] : @""];
     
     FMResultSet *set = [db executeQuery:sql];
     
