@@ -367,4 +367,25 @@
     return YES;
 }
 
+#pragma mark - 数据库中表是否存在
+- (BOOL)hasTable:(NSString *)tableName
+              db:(FMDatabase * _Nonnull)db
+{
+    NSString *sql = [NSString stringWithFormat:@"select count(name) as 'count' from sqlite_master where type ='table' and name = %@", tableName];
+    FMResultSet *rs = [db executeQuery:sql];
+    while ([rs next])
+    {
+        // just print out what we've got in a number of formats.
+        NSInteger count = [rs intForColumn:@"count"];
+        if (0 == count)
+        {
+            return NO;
+        }
+        else
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
 @end

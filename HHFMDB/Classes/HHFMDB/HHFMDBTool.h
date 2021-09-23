@@ -113,6 +113,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)deleteAllDataFromTable:(NSString *)tableName
                             db:(FMDatabase * _Nonnull)db;
 
+#pragma mark - 数据库中表是否存在
+- (BOOL)hasTable:(NSString *)tableName
+              db:(FMDatabase * _Nonnull)db;
+
 //- (BOOL)dbOpen;
 //- (BOOL)dbClose;
 @end
